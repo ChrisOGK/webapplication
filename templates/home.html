@@ -12,28 +12,28 @@
     <div class = "container">
         <table class="table table-dark table-hover">
             <tr>
-                <th>Nome da Empresa</th>
-                <th>Email de Contato</th>
-                <th>Telefone de Contato</th>
-                <th>Quantidade de Peças</th>
-                <th>Tipo das Peças</th>
-                <th>Status</th>
+                <th class="text-center">Nome da Empresa</th>
+                <th class="text-center">Email de Contato</th>
+                <th class="text-center">Telefone de Contato</th>
+                <th class="text-center">Quantidade de Peças</th>
+                <th class="text-center">Tipo das Peças</th>
+                <th class="text-center">Status</th>
                 <th class="text-center" >Opções</th>
             </tr>
             {% for pedido in pedidos %}
             <tr>
-                <td>{{pedido['Nome da Empresa']}}</td>
-                <td>{{pedido['Email de Contato']}}</td>
-                <td>{{pedido['Telefone de contato']}}</td>
-                <td>{{pedido['Quantidade de Peças']}}</td>
-                <td>{{pedido['Tipo de Peças']}}</td>
-                <td>{{pedido['Status do Pedido']}}</td>
+                <td class="text-center">{{pedido['Nome da Empresa']}}</td>
+                <td class="text-center">{{pedido['Email de Contato']}}</td>
+                <td class="text-center">{{pedido['Telefone de contato']}}</td>
+                <td class="text-center">{{pedido['Quantidade de Peças']}}</td>
+                <td class="text-center">{{pedido['Tipo de Peças']}}</td>
+                <td class="text-center">{{pedido['Status do Pedido']}}</td>
                 <td class="text-center"><a href="#" class = 'btn btn-sm btn-success'>Editar</a>
                     <a href="#" class = 'btn btn-sm btn-danger'>Apagar</a></td>
             </tr>
             {% endfor %}
         </table>
-        <a href="/create" class="btn btn-primary">Adicionar</a>
+        <a href="/new_order" class="btn btn-primary">Adicionar</a>
     </div>
 </body>
 </html>
