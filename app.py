@@ -39,12 +39,10 @@ def salvar():
 
 @app.route('/delete/<id>')
 def apagar(id):
-    numero_pedido = 0
     for pedido in pedidos:
         if id == str(pedido['id']):
-            del pedidos[numero_pedido]
+            del pedidos[pedidos.index(pedido)]
             return redirect('/')
-        numero_pedido += 1
 
 @app.route('/update/<id>')
 def atualizar(id):
