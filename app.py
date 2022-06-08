@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from uuid import uuid4
 
 app = Flask(__name__)
@@ -22,6 +22,17 @@ def salvar():
     tipo = request.form['tipo']
     status = request.form['status']
     pedidos.append({'id' : uuid4(),'Nome da Empresa' : nome, 'Email' : email, 'Telefone' : telefone, 'Quantidade de Peças' : quantidade, 'Tipo de Peças' : tipo, 'Status do Pedido' : status})
-    return render_template('home.html', pedidos=pedidos)
+    return redirect('/')
+
+@app.route('/delete/<id>')
+def apagar(id):
+    numero_pedido = 0
+    for pedido in pedidos:
+        if id == str(pedido['id']):
+            del pedidos[numero_pedido]
+            return redirect('/')
+        numero_pedido += 1
+    
+
 
 app.run(debug = True)

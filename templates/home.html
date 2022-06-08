@@ -29,7 +29,7 @@
                 <td class="text-center">{{pedido['Tipo de Peças']}}</td>
                 <td class="text-center">{{pedido['Status do Pedido']}}</td>
                 <td class="text-center"><a href="#" class = 'btn btn-sm btn-success'>Editar</a>
-                    <a href="#" class = 'btn btn-sm btn-danger'>Apagar</a></td>
+                    <a href="/delete/{{pedido['id']}}" class = 'btn btn-sm btn-danger'>Apagar</a></td>
             </tr>
             {% endfor %}
         </table>
