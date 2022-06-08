@@ -25,10 +25,10 @@
                 <td class="text-center">{{pedido['Nome da Empresa']}}</td>
                 <td class="text-center">{{pedido['Email']}}</td>
                 <td class="text-center">{{pedido['Telefone']}}</td>
-                <td class="text-center">{{pedido['Quantidade de Peças']}}</td>
-                <td class="text-center">{{pedido['Tipo de Peças']}}</td>
+                <td class="text-center">{{pedido['Quantidade de Pecas']}}</td>
+                <td class="text-center">{{pedido['Tipo de Pecas']}}</td>
                 <td class="text-center">{{pedido['Status do Pedido']}}</td>
-                <td class="text-center"><a href="#" class = 'btn btn-sm btn-success'>Editar</a>
+                <td class="text-center"><a href="/update/{{pedido['id']}}" class = 'btn btn-sm btn-success'>Editar</a>
                     <a href="/delete/{{pedido['id']}}" class = 'btn btn-sm btn-danger'>Apagar</a></td>
             </tr>
             {% endfor %}
