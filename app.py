@@ -1,12 +1,25 @@
 from flask import Flask, render_template, request, redirect
 from uuid import uuid4
+import csv
 
 app = Flask(__name__)
 
-pedidos = [{'id' : uuid4(),'Nome da Empresa' : 'Shift Tecnologia', 'Email' : 'shift@email.com', 'Telefone' : '17954673514', 'Quantidade de Pecas' : '10', 'Tipo de Pecas' : 'Gola Redonda', 'Status do Pedido' : 'Entregue'}]
+pedidos = []
+with open('Pedidos.csv', 'rt') as entrada:
+  leitor = csv.DictReader(entrada)
+  for pedido in leitor:
+      pedidos.append(dict(pedido))
+
+
+def salvar_csv():
+    with open('Pedidos.csv', 'wt') as saida:
+        escritor = csv.DictWriter(saida, ['id', 'Nome da Empresa', 'Email', 'Telefone', 'Quantidade de Pecas', 'Tipo de Pecas', 'Status do Pedido'])
+        escritor.writeheader()
+        escritor.writerows(pedidos)
 
 @app.route('/')
 def home():
+    salvar_csv()
     return render_template('home.html', pedidos = pedidos)
 
 @app.route('/new_order')
