@@ -1,1 +1,8 @@
-id,Nome da Empresa,Email,Telefone,Quantidade de Pecas,Tipo de Pecas,Status do Pedido
+id,Nome da Empresa,Email,Telefone,Quantidade de Pecas,Tipo de Pecas
+4a0be40d-248a-4197-be84-a62444d33261,Cometa,cometa@email.com,87654329845,40,Regata Gola Redonda
+015397c7-bc0e-4f5b-850b-f7a1fbc74916,DioMadona,DioMadona@email.com,179856465465,5454565,Gola V
+2c3402be-6a16-4a6d-8054-6d4e2f82432e,Etec,Etec@email.com,56456465,60,Gola Redonda
+53a2010b-638b-4a21-b5dd-781d3b353e64,Fatec,fatec@email.com,5465465,79878998,Polo
+b15ddb42-1dec-4587-9108-64a83f7dcbb8,Intel,intel@email.com,65456,30,Jaleco
+ab7ed33e-5323-417c-b0ad-ac3a52030a8d,Meta,meta@email.com,176548525,500,Polo
+9bbecff2-854d-49d2-aee5-e06bc4506d8b,Microsoft,microsoft@email.com,46545648,500,Gola Redonda
