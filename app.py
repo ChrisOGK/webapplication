@@ -72,6 +72,11 @@ def ordenar():
     return redirect('/')
 
     
-
+@app.route('/pesquisar', methods=["POST"])
+def pesquisa():
+    pesquisar = request.form['pesquisa']
+    for pedido in pedidos:
+        if pesquisar.upper() == pedido['Nome da Empresa'].upper():
+            return render_template ('info.html', pedido=pedido)
 
 app.run(debug = True)
