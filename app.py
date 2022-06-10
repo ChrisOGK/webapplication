@@ -13,7 +13,7 @@ with open('Pedidos.csv', 'rt') as entrada:
 
 def salvar_csv():
     with open('Pedidos.csv', 'wt') as saida:
-        escritor = csv.DictWriter(saida, ['id', 'Nome da Empresa', 'Email', 'Telefone', 'Quantidade de Pecas', 'Tipo de Pecas', 'Status do Pedido'])
+        escritor = csv.DictWriter(saida, ['id', 'Nome da Empresa', 'Email', 'Telefone', 'Quantidade de Pecas', 'Tipo de Pecas'])
         escritor.writeheader()
         escritor.writerows(pedidos)
 
@@ -33,8 +33,7 @@ def salvar():
     telefone = request.form['telefone']
     quantidade = request.form['quantidade']
     tipo = request.form['tipo']
-    status = request.form['status']
-    pedidos.append({'id' : uuid4(),'Nome da Empresa' : nome, 'Email' : email, 'Telefone' : telefone, 'Quantidade de Pecas' : quantidade, 'Tipo de Pecas' : tipo, 'Status do Pedido' : status})
+    pedidos.append({'id' : uuid4(),'Nome da Empresa' : nome, 'Email' : email, 'Telefone' : telefone, 'Quantidade de Pecas' : quantidade, 'Tipo de Pecas' : tipo})
     return redirect('/')
 
 @app.route('/delete/<id>')
@@ -61,8 +60,7 @@ def salvar_atualização(id):
     telefone = request.form['telefone']
     quantidade = request.form['quantidade']
     tipo = request.form['tipo']
-    status = request.form['status']
-    pedidos[atualizar] = {'id' : id_do_pedido, 'Nome da Empresa' : nome, 'Email' : email, 'Telefone' : telefone, 'Quantidade de Pecas' : quantidade, 'Tipo de Pecas' : tipo, 'Status do Pedido' : status}
+    pedidos[atualizar] = {'id' : id_do_pedido, 'Nome da Empresa' : nome, 'Email' : email, 'Telefone' : telefone, 'Quantidade de Pecas' : quantidade, 'Tipo de Pecas' : tipo}
     return redirect('/')
 
     
