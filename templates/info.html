@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Pedido</title>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="text-center">Informações do Pedido</h1>
+    <div class="container">
+        <div>
+            <div class="p-3 mb-2 bg-primary text-white">Nome da Empresa</div>
+            <div class="p-3 mb-2 bg-dark text-white">{{pedido['Nome da Empresa']}}</div>
+        </div>
+        <div>
+            <label>Telefone</label>
+            <div>{{pedido['Telefone']}}</div>
+        </div>
+        <div>
+            <label>Email</label>
+            <div>{{pedido['Email']}}</div>
+        </div>
+        <div>
+            <label>Quantidade de Peças</label>
+            <div>{{pedido['Quantidade de Pecas']}}</div>
+        </div>
+        <div>
+            <label>Tipo de Peças</label>
+            <div>{{pedido['Tipo de Pecas']}}</div>
+        </div>
+        <div>
+            <a href="/" class="btn btn-primary">Retornar</a>
+        </div>
+    </div>
+</body>
+</html>
