@@ -10,6 +10,8 @@ with open('Pedidos.csv', 'rt') as entrada:
   for pedido in leitor:
       pedidos.append(dict(pedido))
 
+pedidos = sorted(pedidos, key= lambda pedidos: pedidos['Nome da Empresa'])
+
 
 def salvar_csv():
     with open('Pedidos.csv', 'wt') as saida:
@@ -61,6 +63,12 @@ def salvar_atualização(id):
     quantidade = request.form['quantidade']
     tipo = request.form['tipo']
     pedidos[atualizar] = {'id' : id_do_pedido, 'Nome da Empresa' : nome, 'Email' : email, 'Telefone' : telefone, 'Quantidade de Pecas' : quantidade, 'Tipo de Pecas' : tipo}
+    return redirect('/')
+
+@app.route('/ordenar')
+def ordenar():
+    global pedidos
+    pedidos = sorted(pedidos, key= lambda pedidos: pedidos['Nome da Empresa'])
     return redirect('/')
 
     
