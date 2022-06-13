@@ -78,5 +78,7 @@ def pesquisa():
     for pedido in pedidos:
         if pesquisar.upper() == pedido['Nome da Empresa'].upper():
             return render_template ('info.html', pedido=pedido)
+    else:
+        return render_template('erro.html')
 
 app.run(debug = True)
