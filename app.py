@@ -68,7 +68,7 @@ def salvar_atualização(id):
 @app.route('/ordenar')
 def ordenar():
     global pedidos
-    pedidos = sorted(pedidos, key= lambda pedidos: pedidos['Nome da Empresa'])
+    pedidos = sorted(pedidos, key= lambda pedidos: pedidos['Nome da Empresa'].upper())
     return redirect('/')
 
     
